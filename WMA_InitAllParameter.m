@@ -1,0 +1,62 @@
+function handles = WMA_InitAllParameter(handles)
+%   Copyright(c) 2021
+%	Written by Sun Jia-Wei 210816
+% 	Mail to Authors: jiaweisun0512@163.com
+para.WorkPath = pwd;
+para.TR = 2;
+para.EPIName = '';
+para.EPISublist = '';
+para.T1Name = '';
+
+para.D2N.IsD2N = 0;
+para.D2N.EPI = 0;
+para.D2N.T1 = 0;
+para.RemoveTimes.IsRemoveTime = 0;
+para.RemoveTimes.Time = 10;
+para.Slice.IsSlice = 0;
+para.Slice.SliceNumber = '';
+para.Slice.SliceOrder = '';
+para.Slice.SliceRefer = '';
+para.Realign.IsRealign = 0;
+para.IsT1Preprocess = 0; 
+para.Reorient.isT1ImgReorient = 0;
+para.Bet.IsBet = 0;
+para.Coregister.IsrCoregister = 0;
+para.NewSeg.IsNewSeg = 0;
+para.NewSeg.AffineRegularisation = 'mni'; 
+para.Cov_seg.IsCov = 0;
+para.Cov_seg.IsCovDetrend = 1;
+para.Cov_seg.IsCovFriston24 = 0;
+para.Cov_seg.IsCovGlobal = 0;
+para.Cov_seg.IsCovWM = 0;
+para.Cov_seg.WM_pthrsd = 0.99;
+para.Cov_seg.IsCovCSF = 0;
+para.Cov_seg.CSF_pthrsd = 0.99;
+para.Cov_seg.IsCovGM = 0;
+para.Cov_seg.GM_pthrsd = 0.99;
+para.Cov_seg.IsAddMeanBack = 0;
+para.Cov_seg.IsCovOther = 0;
+para.Cov_seg.CovOtherROI = {''};
+para.FunWM.IsFunWM = 0;
+para.FunWM.mask_p_thrsd = 0.9;
+para.Normalize.IsNormal = 0;
+para.Normalize.BoundingBox = '[-90,-126,-72;90,90,108]';
+para.Normalize.VoxSize = '[3 3 3]';
+para.Normalize.Method = 'nmlz_dartel';
+para.Normalize.AffineRegularisation = 'mni'; 
+para.GWM.IsGWM = 0;
+para.GWM.WMthrsd_gp = 0.9;
+para.GWM.WMthrsd_idvd = 0.9;
+para.GWM.ISRemoveRegion = 0;
+para.GWM.RemoveRegion = '';
+para.GWM.method = {};
+para.GWM.up.Knum = 7;
+para.GWM.tmplt.InDirTemplate = '';
+para.Smooth.IsSmooth = 0;
+para.Smooth.FWHM = '[6 6 6]';
+para.Detrend.IsDetrend = 0;
+para.Filter.IsFilter = 0;
+para.Filter.LowCut_HighPass = 0.01;
+para.Filter.LowPass_HighCut = 0.08;
+handles.para = para;
+
